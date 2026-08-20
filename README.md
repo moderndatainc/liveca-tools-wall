@@ -143,6 +143,50 @@ committed, it is still there. Ask, and we will find it together.
 
 ---
 
+## Two people, one line
+
+Everything above is built so you never touch anybody else's file. Real work is not
+always that tidy, so we finish by breaking that on purpose.
+
+`tagline.txt` is one line, and it is the only file everyone shares. Two of you will
+rewrite it at the same time. The first pull request merges normally. The second one
+will say **"This branch has conflicts that must be resolved."**
+
+That message is not an error, and nothing is broken. Git is telling you it found two
+answers to the same question and will not pick one for you.
+
+Bring your branch up to date with `main`:
+
+```
+git switch main
+git pull
+git switch sarah
+git merge main
+```
+
+Open `tagline.txt`. It now looks like this:
+
+```
+<<<<<<< HEAD
+Your sentence.
+=======
+Their sentence.
+>>>>>>> main
+```
+
+The markers are the two versions and nothing more. Delete the three marker lines and
+whatever you do not want, until the file reads the way it should. Then:
+
+```
+git add tagline.txt
+git commit
+git push
+```
+
+Your pull request is now mergeable. That is the whole of it.
+
+---
+
 ## How the page gets built
 
 You will never need to run this, but no part of it should be a mystery:

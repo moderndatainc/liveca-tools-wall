@@ -1,0 +1,1 @@
+One card per person. Each card arrived here the same way: a branch, a commit, a pull request, and somebody else pressing merge.

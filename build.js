@@ -20,9 +20,14 @@ const wall = fragments.length
   ? fragments.join('\n\n')
   : '  <p class="empty">No cards yet. Add the first one.</p>';
 
+// tagline.txt is one line, and it is the only file everybody shares.
+// That is deliberate: it is where we practise two people colliding.
+const tagline = fs.readFileSync('tagline.txt', 'utf8').trim();
+
 const page = fs
   .readFileSync('index.template.html', 'utf8')
   .replace('<!-- CARDS -->', wall)
+  .replace('<!-- TAGLINE -->', tagline)
   .replace('<!-- COUNT -->', String(cards.length));
 
 fs.rmSync(OUT, { recursive: true, force: true });
