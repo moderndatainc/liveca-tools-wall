@@ -1,0 +1,126 @@
+/* LiveCA tools wall — same palette as the session deck. */
+
+:root {
+  --ink: #22303A;
+  --ink-soft: #31434D;
+  --paper: #FFFFFF;
+  --tint: #F1F3F4;
+  --amber: #D9822B;
+  --green: #3A7D6B;
+  --muted: #6B7A82;
+  --rule: #DFE5E8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Calibri, Carlito, "Segoe UI", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.masthead {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 4.5rem 0 2.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.masthead h1 {
+  margin: 0 0 1rem;
+  font-family: Cambria, Caladea, Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.standfirst {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+.wall {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.card {
+  background: var(--tint);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.6rem;
+  border-top: 4px solid var(--amber);
+}
+
+.card h2 {
+  margin: 0 0 0.15rem;
+  font-family: Cambria, Caladea, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card h3 {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 3rem 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.colophon {
+  max-width: 62rem;
+  margin: 3.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.colophon p { margin: 0 0 0.3rem; }
+.count { color: var(--green); font-weight: 700; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1A252C;
+    --ink: #FFFFFF;
+    --ink-soft: #C9D4DA;
+    --tint: #22303A;
+    --rule: #31434D;
+    --muted: #8A9AA3;
+  }
+  .masthead { border-bottom-color: var(--rule); }
+}
